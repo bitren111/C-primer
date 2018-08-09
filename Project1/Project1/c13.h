@@ -3,14 +3,24 @@
 #define C13_H
 #include<string>
 #include<set>
+class Message;
 class Folder {
+	friend void swap(Folder&, Folder&);
+	friend Message;
 public:
-	explicit Folder(){}
+	Folder() = default;
 	Folder(const Folder&);
 	Folder& operator=(const Folder&);
-
+	~Folder();
+	void print_debug();
 private:
-	std::set<Message*> messages;
+	std::set<Message*> msgs;
+	void remMsg(Message* m) {
+		msgs.erase(m);
+	}
+	void addMsg(Message* m){
+		msgs.insert(m);
+	};
 };
 class Message {
 friend void swap(Message&,Message&);
@@ -29,4 +39,6 @@ private:
 	void remove_from_Folders();
 };
 void swap(Message&, Message&);
+void swap(Folder&, Folder&);
+
 #endif // !C13_H
