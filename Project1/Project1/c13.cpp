@@ -58,3 +58,33 @@ void swap(Message& lhs, Message& rhs) {
 	}
 
 }
+
+Folder::Folder(const Folder& f): msgs(f.msgs)
+{
+	add_to_Message(f);
+}
+
+Folder& Folder::operator=(const Folder&) {
+
+}
+Folder::~Folder() {
+
+}
+
+void Folder::add_to_Message(const Folder& f) {
+	for (auto m : f.msgs)
+		m->addFldr(this);
+}
+
+void Folder::remove_from_Message() {
+	for (auto m : msgs)
+		m->remove(*this);
+}
+
+void Folder::print_debug() {
+
+}
+
+void swap(Folder&, Folder&) {
+
+}
