@@ -4,7 +4,13 @@
 #include<string>
 #include<set>
 class Folder {
+public:
+	explicit Folder(){}
+	Folder(const Folder&);
+	Folder& operator=(const Folder&);
 
+private:
+	std::set<Message*> messages;
 };
 class Message {
 friend void swap(Message&,Message&);
