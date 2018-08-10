@@ -57,6 +57,7 @@ Folder& Folder::operator=(const Folder& f) {
 	remove_from_Message();
 	msgs = f.msgs;
 	add_to_Message(f);
+	return *this;
 }
 Folder::~Folder() {
 	remove_from_Message();
@@ -72,9 +73,6 @@ void Folder::remove_from_Message() {
 		m->remove(*this);
 }
 
-void Folder::print_debug() {
-
-}
 
 void swap(Folder& fl, Folder& fr) {
 	using std::swap;
@@ -82,4 +80,13 @@ void swap(Folder& fl, Folder& fr) {
 	fr.remove_from_Message();
 	swap(fl.msgs, fr.msgs);
 
+}
+void Folder::print_debug() {
+	for (auto m : msgs)
+		std::cout << m->contents << " ";
+	std::cout << std::endl;
+}
+
+void Message::print_debug() {
+	std::cout << contents << std::endl;
 }

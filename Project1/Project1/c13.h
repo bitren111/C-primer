@@ -3,6 +3,7 @@
 #define C13_H
 #include<string>
 #include<set>
+#include<iostream>
 class Message;
 class Folder {
 	friend void swap(Folder&, Folder&);
@@ -37,6 +38,7 @@ public:
 	~Message() ;
 	void save(Folder&);
 	void remove(Folder&);
+	void print_debug();
 private:
 	std::string contents;
 	std::set<Folder*> folders;
