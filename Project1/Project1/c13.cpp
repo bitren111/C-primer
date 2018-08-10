@@ -42,21 +42,10 @@ Message& Message::operator=(const Message& rhs) {
 
 void swap(Message& lhs, Message& rhs) {
 	using std::swap;
-	for (auto f : lhs.folders) {
-		f->remMsg(&lhs);
-	}
-	for (auto f : rhs.folders) {
-		f->remMsg(&rhs);
-	}
+	lhs.remove_from_Folders();
+	rhs.remove_from_Folders();
 	swap(lhs.folders, rhs.folders);
 	swap(lhs.contents, rhs.contents);
-	for (auto f : lhs.folders) {
-		f->addMsg(&rhs);
-	}
-	for (auto f : rhs.folders) {
-		f->addMsg(&lhs);
-	}
-
 }
 
 Folder::Folder(const Folder& f): msgs(f.msgs)
@@ -64,11 +53,13 @@ Folder::Folder(const Folder& f): msgs(f.msgs)
 	add_to_Message(f);
 }
 
-Folder& Folder::operator=(const Folder&) {
-
+Folder& Folder::operator=(const Folder& f) {
+	remove_from_Message();
+	msgs = f.msgs;
+	add_to_Message(f);
 }
 Folder::~Folder() {
-
+	remove_from_Message();
 }
 
 void Folder::add_to_Message(const Folder& f) {
@@ -85,6 +76,10 @@ void Folder::print_debug() {
 
 }
 
-void swap(Folder&, Folder&) {
+void swap(Folder& fl, Folder& fr) {
+	using std::swap;
+	fl.remove_from_Message();
+	fr.remove_from_Message();
+	swap(fl.msgs, fr.msgs);
 
 }

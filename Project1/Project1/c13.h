@@ -20,12 +20,14 @@ private:
 	void remMsg(Message* m) {
 		msgs.erase(m);
 	}
-	void addMsg(Message* m){
+	void addMsg(Message* m) {
 		msgs.insert(m);
 	};
 };
+
 class Message {
 friend void swap(Message&,Message&);
+
 friend class Folder;
 public:
 	explicit Message(const std::string& str=""):
@@ -43,6 +45,7 @@ private:
 	void addFldr(Folder *f) { folders.insert(f); }
 	void remFldr(Folder *f) { folders.erase(f); }
 };
+
 void swap(Message&, Message&);
 void swap(Folder&, Folder&);
 
