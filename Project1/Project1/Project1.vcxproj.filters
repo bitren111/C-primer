@@ -18,6 +18,9 @@
     <ClInclude Include="c13.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="c14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="c13.cpp">
@@ -25,6 +28,9 @@
     </ClCompile>
     <ClCompile Include="test.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="c14.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
