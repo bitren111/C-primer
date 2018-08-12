@@ -46,7 +46,7 @@ void StrVec::chk_n_allocator() {
 		reallocate();
 }
 
-std::pair<std::string*, std::string*> StrVec::alloc_n_copy(const std::string* b, const std::string* e) {
+std::pair<std::string*, std::string*> StrVec::alloc_n_copy (const std::string* b, const std::string* e){
 	auto data = alloc.allocate(e - b);
 	return{ data, std::uninitialized_copy(b,e,data) };
 }
@@ -61,14 +61,21 @@ void StrVec::free() {
 
 void StrVec::reallocate() {
 	auto newcapicity = size() ? 2 * size() : 1;
-	auto newdata = alloc.allocate(newcapicity);
-	auto dest = newdata;
+	auto first = alloc.allocate(newcapicity);
+	/*auto dest = newdata;
 	auto elem = elements;
 	for (size_t i = 0; i != size(); ++i)
-		alloc.construct(dest++, std::move(*elem++));
+		alloc.construct(dest++, std::move(*elem++));*/
+	auto last = std::uninitialized_copy(std::make_move_iterator(begin()), std::make_move_iterator(end()),first);
 	free();
-	elements = newdata;
-	first_free = dest;
+	elements = first;
+	first_free = last;
 	cap = elements + newcapicity;
 }
 
+StrVec::StrVec(StrVec&&) noexcept {
+
+}
+StrVec& StrVec::operator=(StrVec&&) noexcept {
+
+}

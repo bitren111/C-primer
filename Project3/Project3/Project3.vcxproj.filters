@@ -15,36 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="c13.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="c14.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="c15.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="c16.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="c17.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="c13.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="test.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="c14.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="c16.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="c15.cpp">
+    <ClCompile Include="c08.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
