@@ -15,27 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="c08.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="c09.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="c14.cpp">
+    <ClCompile Include="a09.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="c08.h">
+    <ClInclude Include="ch15.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="c09.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="c14.h">
+    <ClInclude Include="a09.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{6A8B0ACD-5CFD-4AEB-9AB0-3704E82CA02D}</ProjectGuid>
-    <RootNamespace>Project3</RootNamespace>
+    <ProjectGuid>{6218B545-789B-4462-AA28-B445A4116CC2}</ProjectGuid>
+    <RootNamespace>learning_cv</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -118,15 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="c08.cpp" />
-    <ClCompile Include="c09.cpp" />
-    <ClCompile Include="c14.cpp" />
-    <ClCompile Include="test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="c08.h" />
-    <ClInclude Include="c09.h" />
-    <ClInclude Include="c14.h" />
+    <ClCompile Include="learning_cv.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
