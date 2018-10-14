@@ -35,3 +35,21 @@ int random_partion(vector<int>& A, const int p, const int r) {
 	A[r] = tempt;
 	return i + 1;
 }
+
+class Base {
+public:
+	virtual int fcn() { return 1; };
+};
+
+class D1 :public Base {
+public:
+	int fcn(int) { return 2; };
+	virtual void f2() {};
+};
+
+class D2 : public D1 {
+public:
+	int fcn(int) { return 3; };
+	int fcn() { return 4; };
+	void f2();
+};
