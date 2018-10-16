@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Heap_Sort.h" />
     <ClInclude Include="SortTestHelper.h" />
     <ClInclude Include="Student.h" />
   </ItemGroup>
