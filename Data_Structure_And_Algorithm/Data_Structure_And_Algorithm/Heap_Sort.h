@@ -8,13 +8,13 @@ private:
 	int count;
 	int capacity;
 	void ShiftUp(int k) {
-		while ((k > 1)&& (data[k] > data[k / 2])) {
-				swap(data[k], data[k / 2]);
-				k /=  2;
-			}
+		while ((k > 1) && (data[k] > data[k / 2])) {
+			swap(data[k], data[k / 2]);
+			k /= 2;
+		}
 	}
 	void ShiftDown(int k) {
-		while (2*k <= count) {
+		while (2 * k <= count) {
 			int j = 2 * k;//在此轮循环中，data[k]和data[j]交换位置
 			if (j + 1 <= count&&data[j + 1] > data[j])
 				j += 1;
@@ -22,6 +22,7 @@ private:
 				break;
 			swap(data[k], data[j]);
 			k = j;
+		}
 	}
 public:
 	MaxHeap(int capacity) {
@@ -39,7 +40,7 @@ public:
 			ShiftDown(i);
 		}
 	}
-	~MaxHeap(){
+	~MaxHeap() {
 		delete[] data;
 	}
 	int size() {
